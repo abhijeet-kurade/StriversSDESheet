@@ -11,8 +11,10 @@ public class TopologicalSort {
         int nodes1 = 8;
         int[][] edges1 = {{1,2},{1,8},{2,3},{2,6},{3,4},{3,5},{4,5},{8,7},{7,6},{6,5},{4,8},{8,3}};
 
+        int nodes2 = 7;
+        int[][] edges2 = {{1,3},{2,3},{2,4},{3,5},{5,6},{4,6},{6,7}};
 
-        int[] topologicalSort = topologicalSortBSF(nodes1, edges1);
+        int[] topologicalSort = topologicalSortBSF(nodes2, edges2);
         for(int num : topologicalSort) System.out.print(num + " ");
     }
 
