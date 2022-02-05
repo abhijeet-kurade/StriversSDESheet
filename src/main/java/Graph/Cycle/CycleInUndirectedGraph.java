@@ -1,4 +1,4 @@
-package Graph;
+package Graph.Cycle;
 
 import java.util.*;
 

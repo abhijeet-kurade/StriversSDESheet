@@ -20,8 +20,8 @@ public class TopologicalSort {
 
     public static int[] topologicalSortBSF(int nodes, int[][] edges){
         /*
-        * Kahn's Algorithm
-        * step 1 : find in degree of all node
+        * todo : ---Kahn's Algorithm----
+        * step 1 : find in-degree of all node
         * step 2 : find nodes with zero in degree
         * step 3 : add nodes with zero in degree in queue
         * step 4 : poll node from queue and add on stack

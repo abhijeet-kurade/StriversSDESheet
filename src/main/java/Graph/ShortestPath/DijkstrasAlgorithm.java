@@ -1,4 +1,4 @@
-package Graph;
+package Graph.ShortestPath;
 
 import java.util.*;
 

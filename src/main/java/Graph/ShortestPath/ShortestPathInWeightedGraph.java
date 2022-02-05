@@ -1,4 +1,4 @@
-package Graph;
+package Graph.ShortestPath;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -12,7 +12,7 @@ public class ShortestPathInWeightedGraph {
 
         int nodes1 = 9;
         int[][] edges1 = {{0,1,4},{0,7,8},{1,2,8},{1,7,11},{7,8,7},{7,6,1},{2,8,2},{8,6,6},{2,3,7},{2,5,4},{6,5,2},{3,5,14},{3,4,9},{4,5,10},};
-        int[][] dists = sp.dijkstraNonWeighted(nodes1, edges1, 8);
+        int[][] dists = sp.dijkstraUnDirectional(nodes1, edges1, 8);
         for(int[] node : dists){
             System.out.println(node[0] + " "+node[1]);
         }
@@ -57,7 +57,7 @@ public class ShortestPathInWeightedGraph {
         return dists;
     }
 
-    public int[][] dijkstraNonWeighted(int nodes, int[][] edges, int start){
+    public int[][] dijkstraUnDirectional(int nodes, int[][] edges, int start){
         HashMap<Integer, ArrayList<int[]>> graph = new HashMap<>();
         HashMap<Integer, Integer> distances = new HashMap<>();
         int inf = Integer.MAX_VALUE;
