@@ -6,8 +6,8 @@ public class Subsequences {
     public static void main(String[] args) {
         int[] arr = {1,2,3,4,5};
         ArrayList<ArrayList<Integer>> subsequences = new ArrayList<>();
-
-        allSubsequences1(0, arr, new ArrayList<>(), subsequences);
+        allSubsequencesWithForLoop(0, arr, new ArrayList<>(), subsequences);
+        System.out.println(subsequences);
 
 
     }
@@ -40,6 +40,23 @@ public class Subsequences {
 
         curr.remove(curr.size()-1);
         allSubsequences(idx+1, arr, curr, subsequences);
+    }
+
+    public static void allSubsequencesWithForLoop(int idx, int[] arr, ArrayList<Integer> curr, ArrayList<ArrayList<Integer>> subsequences){
+        /*
+         * Considering the number first and then removing it.
+         * */
+        if(idx >= arr.length){
+            subsequences.add(new ArrayList<>(curr));
+            return ;
+        }
+
+        for(int i=idx; i<arr.length; i++){
+            curr.add(arr[i]);
+            allSubsequencesWithForLoop(i+1, arr, curr, subsequences);
+            curr.remove(curr.size()-1);
+        }
+
     }
 
 
