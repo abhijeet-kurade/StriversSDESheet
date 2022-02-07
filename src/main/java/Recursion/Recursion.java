@@ -7,7 +7,7 @@ import java.util.Stack;
 
 public class Recursion {
     public static void main(String[] args) {
-        int arr[] = {1, 2, 2};
+        int arr[] = {2,2,2,2};
         System.out.println(subsetIISort(arr));
     }
 
@@ -65,23 +65,23 @@ public class Recursion {
 
     }
 
-    public static ArrayList<ArrayList<Integer>> subsetsIISet(int[] arr){
+    public static ArrayList<ArrayList<Integer>> subsetsIIHashSet(int[] arr){
         HashSet<ArrayList<Integer>> sums = new HashSet<>();
-        subSetIISet(0, new ArrayList<>(), arr, sums);
+        subSetIIHashSet(0, new ArrayList<>(), arr, sums);
         return new ArrayList<>(sums);
     }
     
-    public static void subSetIISet(int idx, ArrayList<Integer> currSum, int[] arr, HashSet<ArrayList<Integer>> sums){
+    public static void subSetIIHashSet(int idx, ArrayList<Integer> currSum, int[] arr, HashSet<ArrayList<Integer>> sums){
         if(idx == arr.length) {
             sums.add(new ArrayList<>(currSum));
             return;
         }
         
         currSum.add(arr[idx]);
-        subSetIISet(idx+1, currSum, arr, sums);
+        subSetIIHashSet(idx+1, currSum, arr, sums);
 
         currSum.remove(currSum.size()-1);
-        subSetIISet(idx+1, currSum, arr, sums);
+        subSetIIHashSet(idx+1, currSum, arr, sums);
 
     }
 

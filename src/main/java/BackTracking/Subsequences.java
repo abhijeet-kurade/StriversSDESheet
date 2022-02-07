@@ -4,15 +4,18 @@ import java.util.ArrayList;
 
 public class Subsequences {
     public static void main(String[] args) {
-        int[] arr = {2,5,3,7};
+        int[] arr = {1,2,3,4,5};
         ArrayList<ArrayList<Integer>> subsequences = new ArrayList<>();
 
         allSubsequences1(0, arr, new ArrayList<>(), subsequences);
-        System.out.println(subsequences);
+
 
     }
 
     public static void allSubsequences1(int idx, int[] arr, ArrayList<Integer> curr, ArrayList<ArrayList<Integer>> subsequences){
+        /*
+        * not considering number first and then considering it
+        * */
         if(idx >= arr.length){
             subsequences.add(new ArrayList<>(curr));
             return ;
@@ -24,6 +27,9 @@ public class Subsequences {
     }
 
     public static void allSubsequences(int idx, int[] arr, ArrayList<Integer> curr, ArrayList<ArrayList<Integer>> subsequences){
+        /*
+        * Considering the number first and then removing it.
+        * */
         if(idx >= arr.length){
             subsequences.add(new ArrayList<>(curr));
             return ;
