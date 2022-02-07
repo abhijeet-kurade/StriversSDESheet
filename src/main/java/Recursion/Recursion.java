@@ -4,7 +4,7 @@ import java.util.ArrayList;
 
 public class Recursion {
     public static void main(String[] args) {
-        int arr[] = {1,5,9};
+        int arr[] = {1, 2, 4};
         System.out.println(subsetSum(arr));
     }
 
@@ -16,10 +16,14 @@ public class Recursion {
     public static void subSetSum(int idx, int currSum, int[] arr, ArrayList<Integer> sums){
         if(idx == arr.length) return;
 
+        /* adding current number in the sum
+         * */
         currSum += arr[idx];
         sums.add(currSum);
         subSetSum(idx+1, currSum, arr, sums);
 
+        /*removing current number from the sum
+         * */
         currSum -= arr[idx];
         subSetSum(idx+1, currSum, arr, sums);
 
@@ -31,21 +35,28 @@ public class Recursion {
             return;
         };
 
+        /*removing current number from the sum
+         * */
         subSetSum1(idx+1, currSum, arr, sums);
+
+        /* adding current number in the sum
+         * */
         currSum += arr[idx];
         subSetSum1(idx+1, currSum, arr, sums);
 
     }
     public static void subSetSum2(int idx, int currSum, int[] arr, ArrayList<Integer> sums){
-
         if(idx == arr.length) {
             sums.add(currSum);
             return;
         };
-
+        /* adding current number in the sum
+        * */
         currSum += arr[idx];
         subSetSum2(idx+1, currSum, arr, sums);
 
+        /*removing current number from the sum
+        * */
         currSum -= arr[idx];
         subSetSum2(idx+1, currSum, arr, sums);
 
