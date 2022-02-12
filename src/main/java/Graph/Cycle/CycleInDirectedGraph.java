@@ -6,7 +6,10 @@ public class CycleInDirectedGraph {
     public static void main(String[] args) {
         int nodes6 = 9; // Directed with cycle
         int[][] edges6 = {{1,2},{2,3},{3,6},{3,4},{4,5},{6,5},{7,2},{7,8},{8,9},{7,9}};
-        System.out.println(detectCycleInDirectedGraph(nodes6, edges6));
+
+        int nodes10 = 2;
+        int[][] edges10 = {{0,1}};
+        System.out.println(detectCycleInDirectedGraphBFS(nodes10, edges10));
     }
 
     public static boolean detectCycleInDirectedGraph(int nodes, int[][] edges){
@@ -48,7 +51,7 @@ public class CycleInDirectedGraph {
         HashMap<Integer, ArrayList<Integer>> graph = new HashMap<>();
         HashMap<Integer, Integer> inDegree = new HashMap<>();
         HashSet<Integer> zeroDegree = new HashSet<>();
-        for(int node=1; node<=nodes; node++){
+        for(int node=0; node<=nodes; node++){
             graph.put(node, new ArrayList<>());
             inDegree.put(node, 0);
             zeroDegree.add(node);
@@ -58,6 +61,7 @@ public class CycleInDirectedGraph {
             if(zeroDegree.contains(edge[1])) zeroDegree.remove(edge[1]);
             inDegree.put(edge[1], inDegree.get(edge[1])+1);
         }
+        System.out.println(graph +" "+inDegree);
         Stack<Integer> stack = new Stack<>();
         Queue<Integer> queue = new LinkedList<>();
         for(Integer node : zeroDegree) queue.add(node);
@@ -71,6 +75,7 @@ public class CycleInDirectedGraph {
                 }
             }
         }
+        System.out.println(stack);
         return nodes != stack.size();
     }
 

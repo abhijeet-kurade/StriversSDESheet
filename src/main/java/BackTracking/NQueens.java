@@ -37,6 +37,7 @@ public class NQueens {
         forward_diagonals[x+y] = 1;
         backward_diagonals[(cols.length-1) + y - x] = 1;
     }
+
     public static void removeQueen(int x, int y, int[][] board, int[] cols, int[] forward_diagonals, int[] backward_diagonals){
         cols[y] = 0; board[x][y] = 0;
         forward_diagonals[x+y] = 0;
