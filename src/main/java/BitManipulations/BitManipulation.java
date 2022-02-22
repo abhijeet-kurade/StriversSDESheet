@@ -6,14 +6,17 @@ public class BitManipulation {
         // System.out.println(unique[0] +" "+unique[1]);
         //System.out.println(singleUniqueNumber(new int[]{3,4,2,5,4,3,5,2,11115}));
         //System.out.println(oppositeSign(21, -98));
-        int num = 107;
-        int[] arr = {2,3,4,5,6,7,5,6,4,5,5,6,6,2,3};
+        //int num = 107;
+        //int[] arr = {2,3,4,5,6,7,5,6,4,5,5,6,6,2,3};
         //getBinaryRepresentation(num);
         //getBinaryRepresentation(turnOffRightMostSetBit(num));
         //System.out.println(positionOfOnlySetBit(num));
         //System.out.println(countSetBits1(num));
-        getBinaryRepresentation(num);
-        getBinaryRepresentation(swapNibbles(num));
+        //getBinaryRepresentation(num);
+        //getBinaryRepresentation(swapNibbles(num));
+
+        int[] arr = {9,1,14,13,15};
+        System.out.println(diffBits(arr));
     }
 
     // DSA1 - Flatten the Tree, Array - find sqr
@@ -162,5 +165,21 @@ public class BitManipulation {
     public static int swapNibbles(int num){
         return ((num & 0x0F) << 4) | ((num & 0xF0) >> 4);
         //return ((num << 4) | (num >> 4)) & (Integer.MAX_VALUE >> 23);
+    }
+
+    public static int diffBits(int[] arr){
+        int sum = 0;
+        for(int i=0; i<32; i++){
+            int ones = 0;
+            int zeros = 0;
+            for(int j=0; j<arr.length; j++){
+                int bit = (arr[j]>>i)&1;
+                if(bit==1) ones += 1;
+                else zeros += 1;
+            }
+            //System.out.println(i+" "+ ones +" "+zeros);
+            sum += ones * zeros;
+        }
+        return sum;
     }
 }
