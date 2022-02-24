@@ -56,7 +56,6 @@ public class GraphTraversal {
         int n = nodes.length;
         if(n == 0) return;
         HashSet<Node> visited = new HashSet<>();
-        Stack<Node> stack = new Stack<>();
         for(int i=0; i<n; i++){
             Node node = nodes[i];
             if(visited.contains(node)) continue;

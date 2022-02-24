@@ -25,6 +25,7 @@ public class MooreVoting {
         for(int i=2; i<arr.length; i++){
             if(count1 == 0) num1 = arr[i];
             else if(count2 == 0) num2 =arr[i];
+
             if(arr[i] == num1) count1 += 1;
             else if(arr[i] == num2) count2 += 1;
             else {
