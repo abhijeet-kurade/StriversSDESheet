@@ -22,11 +22,11 @@ public class TopologicalSort {
         /*
         * todo : ---Kahn's Algorithm----
         * step 1 : find in-degree of all node
-        * step 2 : find nodes with zero in degree
-        * step 3 : add nodes with zero in degree in queue
+        * step 2 : find nodes with zero in-degree
+        * step 3 : add nodes with zero in-degree in queue
         * step 4 : poll node from queue and add on stack
         * step 5 : visit its neighbor
-        * step 6 : reduce in degree if neighbor and if it equals zero then add into queue
+        * step 6 : reduce in degree of neighbor and if it equals zero then add into queue
         * step 7 : go to step 4
         * step 8 : extract topological sort from stack
         *
@@ -60,7 +60,6 @@ public class TopologicalSort {
         int[] topologicalOrder = new int[stack.size()];
         int idx = stack.size()-1;
         while(!stack.isEmpty()) topologicalOrder[idx--] = stack.pop();
-
         return topologicalOrder;
     }
 

@@ -35,12 +35,12 @@ public class BridgesInGraph {
             graph.get(edge[0]).add(edge[1]);
             graph.get(edge[1]).add(edge[0]);
         }
-        int[] start = new int[nodes+1];
-        int[] low = new int[nodes+1];
-        Arrays.fill(start, Integer.MAX_VALUE);
-        Arrays.fill(low, Integer.MAX_VALUE);
+        int[] start = new int[nodes+1]; Arrays.fill(start, Integer.MAX_VALUE);
+        int[] low = new int[nodes+1]; Arrays.fill(low, Integer.MAX_VALUE);
+
         ArrayList<int[]> bridges = new ArrayList<>();
         HashSet<Integer> visited = new HashSet<>();
+
         depthFirstSearch(source, -1, start, low, new int[]{1}, visited, graph, bridges);
         int[][] brgs = new int[bridges.size()][2];
         int idx = 0;

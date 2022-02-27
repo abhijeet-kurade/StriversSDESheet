@@ -36,7 +36,6 @@ public class StronglyConnectedComponent {
             depthFirstSearch(node, reversedGraph, visited, component);
             stronglyConnectedComponents.add(component);
         }
-
         return stronglyConnectedComponents;
     }
     public static void depthFirstSearch(Integer node, HashMap<Integer, ArrayList<Integer>> graph, HashSet<Integer> visited, Stack<Integer> topologicalOrder){

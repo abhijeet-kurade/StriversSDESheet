@@ -84,7 +84,6 @@ public class GraphTraversal {
         for(Node neighbor : node.neighbors){
             graphDFSRecursive(neighbor, visited);
         }
-
     }
 
     public static void graphBFS(Node[] nodes){

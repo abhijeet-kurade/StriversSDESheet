@@ -31,7 +31,6 @@ public class NoThreeConsecutiveLetters {
 
             str.setCharAt(idx, '?');
             return false;
-
         }
         return filterBackTrack(str, idx+1);
 

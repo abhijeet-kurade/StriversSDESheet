@@ -7,9 +7,12 @@ public class CycleInDirectedGraph {
         int nodes6 = 9; // Directed with cycle
         int[][] edges6 = {{1,2},{2,3},{3,6},{3,4},{4,5},{6,5},{7,2},{7,8},{8,9},{7,9}};
 
+        int nodes1 = 7;
+        int[][] edges1 = {{1,2},{2,4},{2,5},{3,5},{3,6},{5,7},{1,7}};
+
         int nodes10 = 2;
         int[][] edges10 = {{0,1}};
-        System.out.println(detectCycleInDirectedGraphBFS(nodes10, edges10));
+        System.out.println(detectCycleInDirectedGraph(nodes1, edges1));
     }
 
     public static boolean detectCycleInDirectedGraph(int nodes, int[][] edges){
