@@ -75,4 +75,32 @@ public class AllDFS {
         }
         return traversals;
     }
+
+    public static ArrayList<ArrayList<Integer>> allOrderTraversal1(Node root){
+        ArrayList<ArrayList<Integer>> traversals = new ArrayList<>();
+        traversals.add(new ArrayList<>());
+        traversals.add(new ArrayList<>());
+        traversals.add(new ArrayList<>());
+
+        Stack<StackNode> stack = new Stack<>();
+        stack.add(new StackNode(root));
+        while(!stack.isEmpty()){
+            StackNode curr = stack.peek();
+            if(curr.rank == 0){
+                traversals.get(curr.rank).add(curr.node.val);
+                curr.rank += 1;
+                if(curr.node.left != null) stack.add(new StackNode(curr.node.left));
+            }
+            else if(curr.rank == 1){
+                traversals.get(curr.rank).add(curr.node.val);
+                curr.rank += 1;
+                if(curr.node.right != null) stack.add(new StackNode(curr.node.right));
+            }
+            else {
+                traversals.get(curr.rank).add(curr.node.val);
+                stack.pop();
+            }
+        }
+        return traversals;
+    }
 }

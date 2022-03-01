@@ -1,5 +1,8 @@
 package Tree.TreeTraversal.LeafTraversal;
 
+import java.util.ArrayList;
+import java.util.Stack;
+
 public class LeafTraversal {
     static class Node{
         int val;
@@ -31,7 +34,23 @@ public class LeafTraversal {
     }
 
     public static void main(String[] args) {
+        Node root = tree1();
+        System.out.println(leafTraversal(root));
 
 
+    }
+
+    public static ArrayList<Integer> leafTraversal(Node root){
+
+        Stack<Node> stack = new Stack<>();
+        stack.add(root);
+        ArrayList<Integer> list = new ArrayList<>();
+        while (!stack.isEmpty()){
+            Node node = stack.pop();
+            if(node.left== null && node.right== null) list.add(node.val);
+            if(node.left!=null)stack.add(node.left);
+            if(node.right!=null) stack.add(node.right);
+        }
+        return list;
     }
 }

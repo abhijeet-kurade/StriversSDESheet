@@ -75,5 +75,10 @@ public class Postorder {
         return root;
     }
 
+    public static Node tree2(){
+        Node root = new Node(1);
+        return null;
+    }
+
 
 }

@@ -4,7 +4,6 @@ import java.util.HashMap;
 
 public class MinSubStringWith012 {
     public static void main(String[] args) {
-
         System.out.println(minSubStringWith012("00001111"));
     }
     public static int minSubStringWith012(String str){

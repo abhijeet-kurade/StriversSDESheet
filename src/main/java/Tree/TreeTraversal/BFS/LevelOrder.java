@@ -36,8 +36,7 @@ public class LevelOrder {
 
     public static void main(String[] args) {
         Node root = tree1();
-        System.out.println(levelOrder(root));
-
+        System.out.println(levelWiseOrder(root));
     }
 
     public static ArrayList<Integer> levelOrder(Node root){
@@ -49,6 +48,25 @@ public class LevelOrder {
             list.add(node.val);
             if(node.left != null) queue.add(node.left);
             if(node.right != null) queue.add(node.right);
+        }
+        return list;
+    }
+
+    public static ArrayList<ArrayList<Integer>> levelWiseOrder(Node root){
+        ArrayList<ArrayList<Integer>> list = new ArrayList<>();
+        Queue<Node> queue = new LinkedList<>();
+        queue.add(root);
+        while (!queue.isEmpty()){
+            int s = queue.size();
+            ArrayList<Integer> curr = new ArrayList<>();
+            for(int i=0; i<s; i++){
+                Node node = queue.poll();
+                curr.add(node.val);
+                if(node.left != null) queue.add(node.left);
+                if(node.right != null) queue.add(node.right);
+            }
+            list.add(curr);
+
         }
         return list;
     }
