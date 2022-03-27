@@ -34,4 +34,15 @@ public class SubStringWithNoDuplicates {
         }
         return max;
     }
+    public static int uniqueSubString(String str, int[] arr){
+        int n= str.length();
+        int left = -1, right = -1;
+        int max = 0;
+        HashMap<Character, Integer> map = new HashMap<>();
+        while(right < n){
+
+        }
+        return max;
+    }
+
 }
