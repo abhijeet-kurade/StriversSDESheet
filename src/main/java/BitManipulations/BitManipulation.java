@@ -2,7 +2,7 @@ package BitManipulations;
 
 public class BitManipulation {
     public static void main(String[] args) {
-         int[] unique = twoNonRepeatingNumbers(new int[]{12,4,6,4,8,6,412,9,9,8}) ;
+        //int[] unique = twoNonRepeatingNumbers(new int[]{12,4,6,4,8,6,412,9,9,8}) ;
         // System.out.println(unique[0] +" "+unique[1]);
         //System.out.println(singleUniqueNumber(new int[]{3,4,2,5,4,3,5,2,11115}));
         //System.out.println(oppositeSign(21, -98));
@@ -17,6 +17,14 @@ public class BitManipulation {
 
 //        int[] arr = {9,1,14,13,15};
 //        System.out.println(diffBits(arr));
+        System.out.println(oppositeSign(100, -200));
+    }
+    public static boolean oppositeSign(int num1, int num2){
+
+        //return ((num1^num2) & (1<<31)) != 0;
+
+        int sign_bit = 1<<31;
+        return ((num1&sign_bit)^(num2&sign_bit)) != 0;
     }
 
     // DSA1 - Flatten the Tree, Array - find sqr
@@ -44,10 +52,7 @@ public class BitManipulation {
         for(int num : arr) number ^= num;
         return number;
     }
-    public static boolean oppositeSign(int num1, int num2){
-        int sign_bit = 1<<31;
-        return ((num1&sign_bit)^(num2&sign_bit)) != 0;
-    }
+
     public static int addOne(int num){
         int andingNumber = -1;
         int bitCheck = 1;

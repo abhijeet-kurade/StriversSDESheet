@@ -39,9 +39,7 @@ public class SubStringWithNoDuplicates {
         int left = -1, right = -1;
         int max = 0;
         HashMap<Character, Integer> map = new HashMap<>();
-        while(right < n){
 
-        }
         return max;
     }
 
