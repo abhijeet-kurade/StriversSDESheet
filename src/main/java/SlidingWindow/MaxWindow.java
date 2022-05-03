@@ -7,6 +7,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Stack;
 
+
 public class MaxWindow {
     public static void main(String[] args) {
         int[] arr = {5, -1, 3, 3, 6, 5, 8, 7, 9};
@@ -32,7 +33,6 @@ public class MaxWindow {
         }
         return sum;
     }
-
     public static List<Integer> maxWindow(int[] arr, int w){
         int n = arr.length;
         int[] nextMax = new int[n];
@@ -56,7 +56,6 @@ public class MaxWindow {
         System.out.println(maxWindow);
         return maxWindow;
     }
-    
     public static List<Integer> minWindow(int[] arr, int w){
         int n = arr.length;
         int[] nextMin = new int[n];
