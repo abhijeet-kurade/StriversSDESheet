@@ -41,7 +41,7 @@ class SegmentTree{
     public void set(int idx, int val){
         set(idx, val, 0, n-1, 0);
     }
-    public int set(int idx, int val, int left, int right, int curr){
+    private int set(int idx, int val, int left, int right, int curr){
         if(idx < left || right < idx){
             if(idx < 0 || tree.length <= idx) return 0;
             return tree[curr];

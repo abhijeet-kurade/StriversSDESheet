@@ -3,9 +3,14 @@ package Trie;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.HashMap;
 
 public class TrieClass {
     public static void main(String[] args) {
+
+        HashMap<String, Integer> map = new HashMap<>();
+        HashMap<String, Integer> map1 = new HashMap<>(map);
+
         Trie trie = new Trie();
         trie.insert("ab");
         trie.insert("abhijeet");
